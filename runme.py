@@ -65,12 +65,12 @@ model.fit_generator(
 		# Multiplied by ten for bigger dataset (25k images)
 	steps_per_epoch=2048,
 		# Multiplied by ten for bigger dataset (25k images)
-	epochs=30,
+	epochs=2,
 	# validation_data=validation_data
 	validation_data=train_generator,
 		# Multiplied by ten for bigger dataset (25k images)
 	validation_steps=832)
-model.save_weights('models/simple_CNN.h5')
+model.save_weights('simple_CNN.h5')
 
 # Step 4 - Test Model
 img = image.load_img('test/1.jpg', target_size=(224,224))
