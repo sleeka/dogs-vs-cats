@@ -26,8 +26,8 @@ datagen = ImageDataGenerator(rescale=1./255)
 train_generator = datagen.flow_from_directory(
 	train_data_dir,
 	target_size=(img_width, img_height),
-	batch_size=16,
-	class_mode='binary')
+	batch_size=16
+,	class_mode='binary')
 
 # cannot import name load_data
 # training_data = load_data('train')
@@ -73,7 +73,7 @@ model.fit_generator(
 model.save_weights('simple_CNN.h5')
 
 # Step 4 - Test Model
-img = image.load_img('test/1.jpg', target_size=(224,224))
+img = Image.load_img('test/1.jpg', target_size=(224,224))
 prediction = model.predict(img)
 print prediction
 
